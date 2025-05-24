@@ -14,6 +14,7 @@
       <div class="buttons">
         <?php
           $buttons = [
+            ['sin','cos','tan','cot'],
             ['7','8','9','/'],
             ['4','5','6','*'],
             ['1','2','3','-'],
@@ -30,6 +31,8 @@
                 echo "<button type='button' class='equals op wide' onclick='calculate()'>=</button>";
               } elseif (in_array($key, ['+','-','*','/'])) {
                 echo "<button type='button' class='op' onclick=\"append('$key')\">$key</button>";
+              } elseif (in_array($key, ['sin','cos','tan','cot'])) {
+                echo "<button type='button' class='trig' onclick=\"appendTrig('$key')\">$key</button>";
               } else {
                 echo "<button type='button' onclick=\"append('$key')\">$key</button>";
               }
